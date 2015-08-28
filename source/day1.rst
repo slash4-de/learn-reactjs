@@ -2,16 +2,17 @@
 DAY-1: React Component
 **********************
 
-In this fast track tutorial, we'll be building simple Spot training App, a powerful app using React. React is JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram.
+In this fast track JavaScript React Tutorial. We'll be building an outdoor training spot application (a map based database for good outdoor high intensive training spots) - a powerful app using React. React is a JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram. It is a state of the art technology to develop responsive and rich user interfaces. It can be compared to other Libraries like AngularJS.
 
-While we'll demonstrate most important features and concept of react, it is not comprehensive react tutirial. This is not what we want and this is also not necessary to get you started on the fast lane. After completing tutorial you will know:
+We will use this example the demonstrate the most important awesome features of the React framework. But this course is a fast track course to get you started with React - it will not cover all aspects of React. This is not what we want and this is also not necessary to get you started. After completing the tutorial you will know:
 
-1. Write rich client Applications using React. Something like facebook and instagram.
-2. You will fully convinced that React is for "building large applications with data that changes over time" - Facebook
-3. You can develop stateful, interactive and reusable UI components
-4. You also understand that it is specifically designed to fit sites where there are lot of updates
+1. How to write rich client Applications using React. Something like Facebook and Instagram.
+2. You will fully understand what Facebook means by "... React is for building large applications with data that changes over time ..." - Facebook
+3. You will be able to develop stateful, interactive and reusable UI components
+4. You will also understand that it is specifically designed to fit sites with a lot of updates
+5. You will see how easy it is to write applications that work both on Mobile and Desktop
 
-Roll up sleevs and get start:
+Roll up sleevs and get started:
 
 (Powerpoint show)
 
