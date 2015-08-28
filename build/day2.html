@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DAY-2: States and Component Life Cycle &mdash; React Tutorial 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="React Tutorial 1.0 documentation" href="index.html" />
+    <link rel="next" title="DAY-3: Forms and Refs" href="day3.html" />
+    <link rel="prev" title="DAY-1: React Component" href="day1.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="day-2-states-and-component-life-cycle">
+<h1>DAY-2: States and Component Life Cycle<a class="headerlink" href="#day-2-states-and-component-life-cycle" title="Permalink to this headline">¶</a></h1>
+<p>In previous, we have learnt about React how to create component, passing values using props, parent &amp; child components. In this section, we&#8217;ll learn about dataflow. We&#8217;ll be also using real live APIs.</p>
+<div class="section" id="data-flow">
+<h2>1. Data Flow<a class="headerlink" href="#data-flow" title="Permalink to this headline">¶</a></h2>
+<p>Unlike many JavaScript framework, In React data flows from parent to child, unidirectional (one way) via <code class="code docutils literal"><span class="pre">props</span></code> and <code class="code docutils literal"><span class="pre">state</span></code>.</p>
+<div class="section" id="bind-data-model">
+<h3>1.1 Bind Data Model<a class="headerlink" href="#bind-data-model" title="Permalink to this headline">¶</a></h3>
+<p>Let us bind a data model to our components</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-2-step-1
+</pre></div>
+</div>
+<p>&#8211;&gt;&gt; code that shows data banding using local variables. This will shows list spot &#8211;&gt;</p>
+<p>Here, data travelled form parent to child using <code class="code docutils literal"><span class="pre">props</span></code>.</p>
+<div class="section" id="assignments">
+<h4>1.1.1 Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Show spot list with spot description</li>
+</ol>
+</div>
+</div>
+<div class="section" id="component-live-cycle-state">
+<h3>1.2 Component Live Cycle &amp; State<a class="headerlink" href="#component-live-cycle-state" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>React components have three parts:</dt>
+<dd><ol class="first last arabic simple">
+<li><strong>Mounting:</strong> A component is being inserted into the DOM.</li>
+<li><strong>Updating:</strong> A component is being re-rendered to determine if the DOM should be updated.</li>
+<li><strong>Unmounting:</strong> A component is being removed from the DOM.</li>
+</ol>
+</dd>
+</dl>
+<p>In different part of component lifecycle, we can hook custom functions in <a class="reference external" href="https://facebook.github.io/react/docs/working-with-the-browser.html">methods</a>.</p>
+<p>State is, attribute of component, useful for updating UI.</p>
+<p>Unlike our previosu example in Day-2-1.1, in real case scenario, we&#8217;ll be fetching data from remote API. In next chapter, we&#8217;ll show how to use real API. For now let&#8217;s get it done by using JSON file. Make new JSON file:</p>
+<ol class="arabic">
+<li><p class="first">On c9 workspace, create new blank file</p>
+</li>
+<li><p class="first">Copy and paste following content</p>
+<p>..code:: json</p>
+<blockquote>
+<div><p>&#8211;&gt; json code here, list of spot &#8211;&gt;</p>
+</div></blockquote>
+</li>
+<li><p class="first">Save it as spots.json</p>
+</li>
+</ol>
+<p>Let&#8217;s see remote fetching in action.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre> git checkout -f day-2-step-2
+
+--&gt; code that shows spot name --&gt;
+</pre></div>
+</div>
+<p>Here, data have been passed to child using State. We have also hook our custom function using <code class="code docutils literal"><span class="pre">componentDidMount</span></code> function of <strong>Mounting</strong> stage.</p>
+<div class="section" id="id1">
+<h4>1.2.1 Assignments:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Modify json file so that it shows spot with address.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="events-two-way-data-binding">
+<h3>1.3 Events &amp; Two-Way Data Binding<a class="headerlink" href="#events-two-way-data-binding" title="Permalink to this headline">¶</a></h3>
+<p>We have said that React has one way data flow. In many case, we need two way data binding. This can be acheived using events e.g. <code class="code docutils literal"><span class="pre">change</span></code>.</p>
+<p>In our spot application, let us add component that shows spot detail (along with review), on clicking any of event.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>-&gt;&gt; code to show two
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="real-shot">
+<h2>2 Real Shot<a class="headerlink" href="#real-shot" title="Permalink to this headline">¶</a></h2>
+<p>By now, you have understood component, it&#8217;s life cycle, props and state, data binding and events. So far we used a static json file. Now time to face real scenario - use a real APIs.</p>
+<p>Teaching how to make RESTFul APIs out of scope of tutorial. However, for this tutorial we are going to use pre-build RESTFul APIs. The <code class="code docutils literal"><span class="pre">http://myspotapy....domain/api/v1/spots</span></code> is end point that gives you spot information including review. This file has exactly same structure as spot.json. Pleas go ahead and modify your code to bind this API instead of spot.json</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="day1.html">DAY-1: React Component</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">DAY-2: States and Component Life Cycle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-flow">1. Data Flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bind-data-model">1.1 Bind Data Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assignments">1.1.1 Assignments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#component-live-cycle-state">1.2 Component Live Cycle &amp; State</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.2.1 Assignments:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#events-two-way-data-binding">1.3 Events &amp; Two-Way Data Binding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#real-shot">2 Real Shot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="day3.html">DAY-3: Forms and Refs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day4.html">DAY-4: Flux</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="day1.html" title="previous chapter">DAY-1: React Component</a></li>
+      <li>Next: <a href="day3.html" title="next chapter">DAY-3: Forms and Refs</a></li>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, slash4.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/day2.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DAY-3: Forms and Refs &mdash; React Tutorial 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="React Tutorial 1.0 documentation" href="index.html" />
+    <link rel="next" title="DAY-4: Flux" href="day4.html" />
+    <link rel="prev" title="DAY-2: States and Component Life Cycle" href="day2.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="day-3-forms-and-refs">
+<h1>DAY-3: Forms and Refs<a class="headerlink" href="#day-3-forms-and-refs" title="Permalink to this headline">¶</a></h1>
+<p>In previous two lession, we have learnt a lot about React. In this section, we&#8217;ll learn about forms and references. We&#8217;ll be adding more features on our Spot Training Application.</p>
+<div class="section" id="form-handeling">
+<h2>1 Form Handeling<a class="headerlink" href="#form-handeling" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>In the HTML world, form compoment such as &lt;input&gt; &lt;textarea&gt; &lt;select&gt; is different from normal component. Those components provide the way user can change values - in other word those forms can be mutate by users. React has its own way of form-handling. Few important notes:</dt>
+<dd><ul class="first last simple">
+<li><strong>Controlled Component</strong>: Input component with default.</li>
+<li><strong>Uncontrolled Component</strong>: Input component without default.</li>
+<li><strong>Textarea</strong>: <code class="code docutils literal"><span class="pre">&lt;textarea&gt;</span></code> component has value in value attribute e.g. <code class="code docutils literal"><span class="pre">&lt;textarea</span> <span class="pre">name=&quot;myteaxtarea&quot;</span> <span class="pre">value=&quot;My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">John&quot;&gt;</span></code></li>
+<li><strong>Select</strong>: <code class="code docutils literal"><span class="pre">&lt;select&gt;</span></code> component has value in value attribute e.g.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="add-spot-input-box">
+<h3>1.1 Add Spot Input Box<a class="headerlink" href="#add-spot-input-box" title="Permalink to this headline">¶</a></h3>
+<p>In our Spot Training Application, let us add feature where a user can add new spot i.e. Spot</p>
+<div class="section" id="add-events-on-spot-component">
+<h4>1.1.1 Add Events on Spot Component<a class="headerlink" href="#add-events-on-spot-component" title="Permalink to this headline">¶</a></h4>
+<p>Since you already know, add event will display Spot name as shown in image below</p>
+<blockquote>
+<div></div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We use the ref attribute to assign a name to a child component and this.refs to reference the component. We can call React.findDOMNode(component) on a component to get the native browser DOM element.</p>
+</div>
+</div>
+</div>
+<div class="section" id="save-spot-in-remote">
+<h3>3.2 Save Spot in Remote<a class="headerlink" href="#save-spot-in-remote" title="Permalink to this headline">¶</a></h3>
+<p>You already knwo how to use APIs. Let&#8217;s saev Spot information remote server.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-3-step-2
+
+--&gt; This will save event in remote server also update for 3.1.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-forms-remote-api">
+<h3>3.3 More Forms &amp; Remote API<a class="headerlink" href="#more-forms-remote-api" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s add form for review. Where user can rate Spot e.g. good for pullups, bad for running</p>
+<div class="section" id="spot-feature">
+<h4>3.3.1 Spot feature<a class="headerlink" href="#spot-feature" title="Permalink to this headline">¶</a></h4>
+<p>Let us add Spot rating - add description and photos</p>
+</div>
+<div class="section" id="assignments-spot-rating">
+<h4>3.3.2 Assignments: Spot Rating<a class="headerlink" href="#assignments-spot-rating" title="Permalink to this headline">¶</a></h4>
+<p>Let us add Spot feature e.g. good for pullups, bad for running</p>
+</div>
+<div class="section" id="join-training">
+<h4>3.3.3 Join Training<a class="headerlink" href="#join-training" title="Permalink to this headline">¶</a></h4>
+<p>Adding join call e.g. I try here tonight &#64; 10 - who joins?</p>
+</div>
+<div class="section" id="assigments-list-who-are-joining">
+<h4>3.3.4 Assigments: List who are joining<a class="headerlink" href="#assigments-list-who-are-joining" title="Permalink to this headline">¶</a></h4>
+<p>Show the list of users who are joining.</p>
+</div>
+</div>
+</div>
+<div class="section" id="assignments">
+<h2>4. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add adthis widget on events</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="day1.html">DAY-1: React Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day2.html">DAY-2: States and Component Life Cycle</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">DAY-3: Forms and Refs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-handeling">1 Form Handeling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-spot-input-box">1.1 Add Spot Input Box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-events-on-spot-component">1.1.1 Add Events on Spot Component</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#save-spot-in-remote">3.2 Save Spot in Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-forms-remote-api">3.3 More Forms &amp; Remote API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spot-feature">3.3.1 Spot feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignments-spot-rating">3.3.2 Assignments: Spot Rating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-training">3.3.3 Join Training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assigments-list-who-are-joining">3.3.4 Assigments: List who are joining</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignments">4. Assignments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="day4.html">DAY-4: Flux</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="day2.html" title="previous chapter">DAY-2: States and Component Life Cycle</a></li>
+      <li>Next: <a href="day4.html" title="next chapter">DAY-4: Flux</a></li>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, slash4.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/day3.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
