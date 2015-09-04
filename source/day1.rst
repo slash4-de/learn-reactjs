@@ -1,5 +1,5 @@
 **********************
-DAY-1: React Component
+DAY-1: React Framework
 **********************
 
 This is a fast track JavaScript React Tutorial. We'll be building an outdoor training spot application (a map based database for good outdoor high intensive training spots) - a powerful app using React. React is a JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram. It is a state of the art technology to develop responsive and rich user interfaces. It can be compared to other Libraries like AngularJS.
@@ -7,7 +7,7 @@ This is a fast track JavaScript React Tutorial. We'll be building an outdoor tra
 We will use this example the demonstrate the most important awesome features of the React framework. But this course is a fast track course to get you started with React - it will not cover all aspects of React. This is not what we want and this is also not necessary to get you started. After completing the tutorial you will know:
 
 1. How to write rich client Applications using React. Something like Facebook and Instagram.
-2. You will fully understand what Facebook means by "... React is for building large applications with data that changes over time ..." - Facebook
+2. You will understand what Facebook means by "... React is for building large applications with data that changes over time ..." - Facebook
 3. You will be able to develop stateful, interactive and reusable UI components
 4. You will also understand that it is specifically designed to fit sites with a lot of updates
 5. You will see how easy it is to write applications that work both on Mobile and Desktop
@@ -25,19 +25,19 @@ In next four hour we'll be make Application, that runs in Mobile and Desktop, fo
 1. Development Environment
 ##########################
 
-Setting of Development is as simple as downloading two JavaScript files (React Starter Kit), browser (Internet Explorer, Firefox, Safari, Chorme or any other) and simple editor like Notepad or TextEdit. However, like in all other tutorials, we recommend to use Could9, referred as c9 hereafter.
+Setting up a Development Environment is as simple as downloading two JavaScript files (React Starter Kit). Then you just need a browser (Internet Explorer, Firefox, Safari, Chorme or any other) and simple editor like Notepad or TextEdit. However, like in our other tutorials, we recommend to use the cloud9 platform ... which includes an online editor that will look and feel the same for all students.
 
-So, please signup in `c9.io <https://c9.io>`_ and create an account. Don't worry ... it's free ...
+So, please signup at: 
 
-**Why c9?**
+`c9.io <https://c9.io>`_ 
 
-c9 is a browser based IDE (Integrated Development Environment) that can be configured to suite your specific need. In our case, we'll be using Ubuntu machine - you just need a browser and an internet connection. 
+and create an account. Don't worry ... it's free ...
 
 1.1 c9 dashboard
 ================
 
 Ok - you have created a c9 account ... great! Now it is time to create a workspace. 
-Please login with your c9 account and follow the steps below.
+Please login with your c9 account and follow the next steps.
 
 We would recommend that you are using 2 screens - have your c9 browser on one side and this course window on the other.
 
@@ -74,14 +74,15 @@ So let's check out your online workspace. You have an editor, your own Linux she
 
 In above window, you can see:
 
-1. **Run Project**: When you click "Run Project" c9 will start "application server" with your code and you will be able to access and test it in your browser.
+1. **Run Project**: When you click "Run Project" c9 will start an "application server" with your code and you will be able to access and test it in your browser.
 2. **Project exporer**: Shows you a list of files and folders of your project.
 3. **Bash**: Browser based terminal to run Linux commands. In your c9 environment you have your own little Linux server - you can run commands like your were logged in with ssh.
 
-2. Component
-############
+2. React Components
+###################
 
-Compoment represents a unit UI or set of UIs. In fact, everything is component in React. Let us create our first component, spot name.
+Ok - now we are ready to go. Let's take a deeper look into the React framework. First we will talk about Components.
+Compoments represent a unit UI or set of UIs. In fact, everything is a component in React. To better understand what this abstract term means - let's just create our first component: spot name.
 
 1. In your c9 workspace, click on file menu.
 2. Click New File
@@ -119,19 +120,19 @@ Compoment represents a unit UI or set of UIs. In fact, everything is component i
 4. Save it
 5. Click on Run
 
-The project URL is shown in line :code:`Your code is running at https://projectname-username.c9.io`. The part after http (including http). For example, http://myspot-slash4.c9.io is the URL for us, where myevent is the project name and slash4 is your username. Alternatively, you can find your project URL by clicking on preference icon at top-right corner of workspace.
+The project URL is shown in line :code:`Your code is running at https://projectname-username.c9.io`. The part after http (including http). For example, http://myspot-slash4.c9.io is the URL for us, where myspot is the project name and slash4 is your username. Alternatively, you can find your project URL by clicking on preference icon at top-right corner of workspace.
 
 
 .. note::
 
   JXS - what is JXS?
 
-   There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We'll be using JXS all time.
+   There are multiple ways to write React compoments - using plain vanilla JavaScript and using JXS. We'll be using JXS all time.
 
-3. Props
-########
+3. React Props
+##############
 
-Props is attribute attribute of compoment, mostly useful to pass value to compoment. 
+Props are attributes of compoments. Mostly they are used to pass values to components.
 
 .. code:: bash
 
@@ -156,7 +157,7 @@ Props is attribute attribute of compoment, mostly useful to pass value to compom
 4. Parent and Child Components
 ##############################
 
-The power and simplicity of React probably lies on it's feature that allow to create reusable compoments. When you make a compoment it can be called from another compoment. The caller is called Parent and the component which is being called is known as Child.
+The power and simplicity of React probably lies on it's feature that allows to create reusable compoments. When you make a compoment it can be called from another compoment. The caller is called Parent and the component which is being called is known as Child.
 
 4.1 Adding Spot Review
 ======================
@@ -201,7 +202,7 @@ In our spot app, let us add user review information e.g. good for pullups, bad f
 
 4.2. More on Components
 =======================
-Let's look our Spot layout in DOM heirirachy prospective.
+Let's look at our Spot layout in DOM heirirachy prospective.
 
 1. First of all we have spot (box) as whole.
 2. Then we have spot name
