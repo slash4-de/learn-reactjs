@@ -104,7 +104,7 @@ Compoment represents a unit UI or set of UIs. In fact, everything is component i
                var SpotName = React.createClass({
                   render: function() {
                     return (
-                      <div className="spotName">XYZ Gym</div>
+                      <h1 className="spotName">XYZ Gym</h1>
                     );
                   }
                 });
@@ -123,9 +123,10 @@ The project URL is shown in line :code:`Your code is running at https://projectn
 
 
 .. note::
-    JXS - what is JXS
 
-There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We'll be using JXS all time.
+  JXS - what is JXS?
+
+   There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We'll be using JXS all time.
 
 3. Props
 ########
@@ -134,11 +135,23 @@ Props is attribute attribute of compoment, mostly useful to pass value to compom
 
 .. code:: bash
 
-   git checkout -f day-1-step-1
+   git checkout -f day-1-step-2
 
---> code to show how to pass props, pass spot name to compoment in props -->
+**Changes:**
 
-Here, we have passed the spot name using props. Notice that the props can be accessed within component using this.props
+1. We have passed :code:`spot` props:
+
+   .. code:: html
+
+      <SpotName spot={"XYZ Gym"}/>,
+
+2. In the conponent, we have shown the value of :code:`spot` props:
+
+   .. code:: html
+
+      <h1 className="spotName">{this.props.spot}</h1>
+
+   Here, we have passed the spot name using props. Notice that the props can be accessed within component using this.props
 
 4. Parent and Child Components
 ##############################
@@ -152,9 +165,113 @@ In our spot app, let us add user review information e.g. good for pullups, bad f
 
 .. code:: bash
 
-   git checkout -f day-1-step-2
+   git checkout -f day-1-step-3
 
- --> code to show review -->
+**Changes**:
+
+ .. code-block:: javascript
+    :linenos:
+
+    var SpotReview = React.createClass({
+        render: function() {
+          return (
+              <div className="review">{this.props.children}</div>
+          );
+        }
+      });
+
+      var SpotName = React.createClass({
+        render: function() {
+          return (
+            <div className="spot">
+              <h1 className="spotName">{this.props.spot}</h1>
+              <SpotReview>Good for running *****</SpotReview>
+            </div>
+          );
+        }
+      });
+
+      React.render(
+        <SpotName spot={"XYZ Gym"}/>,
+        document.getElementById('content')
+      );
+ 
+ 1. We have added new component i.e. :code:`SpotReview`, line no 1-7
+ 2. We also made changes on :code:`SpotName` component. Line 12, we added a wrapper division. Line 14, we have called newly created :code:`SpotReview`. Here :code:`SpotName` is parent and :code:`SpotReview` is child.
+
+4.2. More on Components
+=======================
+Let's look our Spot layout in DOM heirirachy prospective.
+
+1. First of all we have spot (box) as whole.
+2. Then we have spot name
+3. We have list of reiviews. It consist multiple items.
+
+So conceptually, we'll have big spot box. Then we divide the box into name and review section. Review section is further dividted into each items.
+
+.. figure:: images/react-day-1-components.png
+
+   *Figure 1.4: DOM structure*
+
+
+.. code:: bash
+
+   git checkout -f day-1-step-4
+
+**Changes:**
+
+ .. code-block:: javascript
+    :linenos:
+
+    var SpotReviewItem = React.createClass({
+      render: function() {
+        return (
+            <div className="reviewItem">{this.props.children}</div>
+        );
+      }
+    });
+
+    var SpotReview = React.createClass({
+      render: function() {
+        return (
+            <div className="review">
+              <SpotReviewItem>Good for running *****</SpotReviewItem>
+              <SpotReviewItem>Good for pushup ****</SpotReviewItem>
+            </div>
+        );
+      }
+    });
+
+    var SpotName = React.createClass({
+      render: function() {
+        return (
+          <h1 className="spotName">{this.props.spot}</h1>
+        );
+      }
+    });
+
+    var Spot = React.createClass({
+      render: function() {
+        return (
+          <div className="spot">
+            <SpotName spot={this.props.spot} />
+            <SpotReview />
+          </div>
+        );
+      }
+    });
+
+    React.render(
+      <Spot spot={"XYZ Gym"}/>,
+      document.getElementById('content')
+    );
+
+Looking figure 1.4, you can make guess that there should be four component. Exactly, we have four components.
+
+1. We have added :code:`SpotReviewItem` component, line 1-7
+2. We have added :code:`Spot` component, line 28-37
+3. We also made changes on :code:`SpotName` and :code:`SpotReview` components
+
 
 5. Assignments
 ##############

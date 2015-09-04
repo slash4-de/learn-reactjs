@@ -40,15 +40,16 @@
             
   <div class="section" id="day-1-react-component">
 <h1>DAY-1: React Component<a class="headerlink" href="#day-1-react-component" title="Permalink to this headline">¶</a></h1>
-<p>In this fast track tutorial, we&#8217;ll be building simple Spot training App, a powerful app using React. React is JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram.</p>
-<p>While we&#8217;ll demonstrate most important features and concept of react, it is not comprehensive react tutirial. This is not what we want and this is also not necessary to get you started on the fast lane. After completing tutorial you will know:</p>
+<p>This is a fast track JavaScript React Tutorial. We&#8217;ll be building an outdoor training spot application (a map based database for good outdoor high intensive training spots) - a powerful app using React. React is a JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram. It is a state of the art technology to develop responsive and rich user interfaces. It can be compared to other Libraries like AngularJS.</p>
+<p>We will use this example the demonstrate the most important awesome features of the React framework. But this course is a fast track course to get you started with React - it will not cover all aspects of React. This is not what we want and this is also not necessary to get you started. After completing the tutorial you will know:</p>
 <ol class="arabic simple">
-<li>Write rich client Applications using React. Something like facebook and instagram.</li>
-<li>You will fully convinced that React is for &#8220;building large applications with data that changes over time&#8221; - Facebook</li>
-<li>You can develop stateful, interactive and reusable UI components</li>
-<li>You also understand that it is specifically designed to fit sites where there are lot of updates</li>
+<li>How to write rich client Applications using React. Something like Facebook and Instagram.</li>
+<li>You will fully understand what Facebook means by &#8221;... React is for building large applications with data that changes over time ...&#8221; - Facebook</li>
+<li>You will be able to develop stateful, interactive and reusable UI components</li>
+<li>You will also understand that it is specifically designed to fit sites with a lot of updates</li>
+<li>You will see how easy it is to write applications that work both on Mobile and Desktop</li>
 </ol>
-<p>Roll up sleevs and get start:</p>
+<p>Roll up sleevs and get started:</p>
 <p>(Powerpoint show)</p>
 <dl class="docutils">
 <dt>In next four hour we&#8217;ll be make Application, that runs in Mobile and Desktop, following features:</dt>
@@ -161,7 +162,7 @@ Please login with your c9 account and follow the steps below.</p>
          var SpotName = React.createClass({
             render: function() {
               return (
-                &lt;div className=&quot;spotName&quot;&gt;XYZ Gym&lt;/div&gt;
+                &lt;h1 className=&quot;spotName&quot;&gt;XYZ Gym&lt;/h1&gt;
               );
             }
           });
@@ -183,18 +184,31 @@ Please login with your c9 account and follow the steps below.</p>
 <p>The project URL is shown in line <code class="code docutils literal"><span class="pre">Your</span> <span class="pre">code</span> <span class="pre">is</span> <span class="pre">running</span> <span class="pre">at</span> <span class="pre">https://projectname-username.c9.io</span></code>. The part after http (including http). For example, <a class="reference external" href="http://myspot-slash4.c9.io">http://myspot-slash4.c9.io</a> is the URL for us, where myevent is the project name and slash4 is your username. Alternatively, you can find your project URL by clicking on preference icon at top-right corner of workspace.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">JXS - what is JXS</p>
+<p>JXS - what is JXS?</p>
+<blockquote class="last">
+<div>There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We&#8217;ll be using JXS all time.</div></blockquote>
 </div>
-<p>There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We&#8217;ll be using JXS all time.</p>
 </div>
 <div class="section" id="props">
 <h2>3. Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
 <p>Props is attribute attribute of compoment, mostly useful to pass value to compoment.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-1
+<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-2
 </pre></div>
 </div>
-<p>&#8211;&gt; code to show how to pass props, pass spot name to compoment in props &#8211;&gt;</p>
+<p><strong>Changes:</strong></p>
+<ol class="arabic">
+<li><p class="first">We have passed <code class="code docutils literal"><span class="pre">spot</span></code> props:</p>
+<div class="code html highlight-python"><div class="highlight"><pre>&lt;SpotName spot={&quot;XYZ Gym&quot;}/&gt;,
+</pre></div>
+</div>
+</li>
+<li><p class="first">In the conponent, we have shown the value of <code class="code docutils literal"><span class="pre">spot</span></code> props:</p>
+<div class="code html highlight-python"><div class="highlight"><pre>&lt;h1 className=&quot;spotName&quot;&gt;{this.props.spot}&lt;/h1&gt;
+</pre></div>
+</div>
 <p>Here, we have passed the spot name using props. Notice that the props can be accessed within component using this.props</p>
+</li>
+</ol>
 </div>
 <div class="section" id="parent-and-child-components">
 <h2>4. Parent and Child Components<a class="headerlink" href="#parent-and-child-components" title="Permalink to this headline">¶</a></h2>
@@ -202,11 +216,174 @@ Please login with your c9 account and follow the steps below.</p>
 <div class="section" id="adding-spot-review">
 <h3>4.1 Adding Spot Review<a class="headerlink" href="#adding-spot-review" title="Permalink to this headline">¶</a></h3>
 <p>In our spot app, let us add user review information e.g. good for pullups, bad for running</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>  git checkout -f day-1-step-2
-
---&gt; code to show review --&gt;
+<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-3
 </pre></div>
 </div>
+<p><strong>Changes</strong>:</p>
+<blockquote>
+<div><div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre>var SpotReview = React.createClass({
+    render: function() {
+      return (
+          &lt;div className=&quot;review&quot;&gt;{this.props.children}&lt;/div&gt;
+      );
+    }
+  });
+
+  var SpotName = React.createClass({
+    render: function() {
+      return (
+        &lt;div className=&quot;spot&quot;&gt;
+          &lt;h1 className=&quot;spotName&quot;&gt;{this.props.spot}&lt;/h1&gt;
+          &lt;SpotReview&gt;Good for running *****&lt;/SpotReview&gt;
+        &lt;/div&gt;
+      );
+    }
+  });
+
+  React.render(
+    &lt;SpotName spot={&quot;XYZ Gym&quot;}/&gt;,
+    document.getElementById(&#39;content&#39;)
+  );
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple">
+<li>We have added new component i.e. <code class="code docutils literal"><span class="pre">SpotReview</span></code>, line no 1-7</li>
+<li>We also made changes on <code class="code docutils literal"><span class="pre">SpotName</span></code> component. Line 12, we added a wrapper division. Line 14, we have called newly created <code class="code docutils literal"><span class="pre">SpotReview</span></code>. Here <code class="code docutils literal"><span class="pre">SpotName</span></code> is parent and <code class="code docutils literal"><span class="pre">SpotReview</span></code> is child.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="more-on-components">
+<h3>4.2. More on Components<a class="headerlink" href="#more-on-components" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s look our Spot layout in DOM heirirachy prospective.</p>
+<ol class="arabic simple">
+<li>First of all we have spot (box) as whole.</li>
+<li>Then we have spot name</li>
+<li>We have list of reiviews. It consist multiple items.</li>
+</ol>
+<p>So conceptually, we&#8217;ll have big spot box. Then we divide the box into name and review section. Review section is further dividted into each items.</p>
+<div class="figure" id="id4">
+<img alt="_images/react-day-1-components.png" src="_images/react-day-1-components.png" />
+<p class="caption"><span class="caption-text"><em>Figure 1.4: DOM structure</em></span></p>
+</div>
+<div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-4
+</pre></div>
+</div>
+<p><strong>Changes:</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre>var SpotReviewItem = React.createClass({
+  render: function() {
+    return (
+        &lt;div className=&quot;reviewItem&quot;&gt;{this.props.children}&lt;/div&gt;
+    );
+  }
+});
+
+var SpotReview = React.createClass({
+  render: function() {
+    return (
+        &lt;div className=&quot;review&quot;&gt;
+          &lt;SpotReviewItem&gt;Good for running *****&lt;/SpotReviewItem&gt;
+          &lt;SpotReviewItem&gt;Good for pushup ****&lt;/SpotReviewItem&gt;
+        &lt;/div&gt;
+    );
+  }
+});
+
+var SpotName = React.createClass({
+  render: function() {
+    return (
+      &lt;h1 className=&quot;spotName&quot;&gt;{this.props.spot}&lt;/h1&gt;
+    );
+  }
+});
+
+var Spot = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;spot&quot;&gt;
+        &lt;SpotName spot={this.props.spot} /&gt;
+        &lt;SpotReview /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+React.render(
+  &lt;Spot spot={&quot;XYZ Gym&quot;}/&gt;,
+  document.getElementById(&#39;content&#39;)
+);
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>Looking figure 1.4, you can make guess that there should be four component. Exactly, we have four components.</p>
+<ol class="arabic simple">
+<li>We have added <code class="code docutils literal"><span class="pre">SpotReviewItem</span></code> component, line 1-7</li>
+<li>We have added <code class="code docutils literal"><span class="pre">Spot</span></code> component, line 28-37</li>
+<li>We also made changes on <code class="code docutils literal"><span class="pre">SpotName</span></code> and <code class="code docutils literal"><span class="pre">SpotReview</span></code> components</li>
+</ol>
 </div>
 </div>
 <div class="section" id="assignments">
@@ -239,6 +416,7 @@ Please login with your c9 account and follow the steps below.</p>
 <li class="toctree-l2"><a class="reference internal" href="#props">3. Props</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parent-and-child-components">4. Parent and Child Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#adding-spot-review">4.1 Adding Spot Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-on-components">4.2. More on Components</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignments">5. Assignments</a></li>
