@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>DAY-1: React Component &mdash; React Tutorial 1.0 documentation</title>
+    <title>DAY-1: React &mdash; React Tutorial 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -38,8 +38,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="day-1-react-component">
-<h1>DAY-1: React Component<a class="headerlink" href="#day-1-react-component" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="day-1-react">
+<h1>DAY-1: React<a class="headerlink" href="#day-1-react" title="Permalink to this headline">¶</a></h1>
 <p>This is a fast track JavaScript React Tutorial. We&#8217;ll be building an outdoor training spot application (a map based database for good outdoor high intensive training spots) - a powerful app using React. React is a JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram. It is a state of the art technology to develop responsive and rich user interfaces. It can be compared to other Libraries like AngularJS.</p>
 <p>We will use this example the demonstrate the most important awesome features of the React framework. But this course is a fast track course to get you started with React - it will not cover all aspects of React. This is not what we want and this is also not necessary to get you started. After completing the tutorial you will know:</p>
 <ol class="arabic simple">
@@ -115,8 +115,17 @@ Please login with your c9 account and follow the steps below.</p>
 </ol>
 </div>
 </div>
+<div class="section" id="warming-up">
+<h2>2. Warming up<a class="headerlink" href="#warming-up" title="Permalink to this headline">¶</a></h2>
+<p>React is library for DOM manipulation at abstract level, more like abastract form of jQuery. Combined with FLUX architecture, it replaces traditional MVC architecture. Just to make more clear, React represents V in MVC, if you look i from MVC propestive.</p>
+<div class="figure" id="id4">
+<img alt="_images/flux.png" src="_images/flux.png" />
+<p class="caption"><span class="caption-text"><em>Figure 1.4: FLUX architecture</em></span></p>
+</div>
+<p>In this FLUX architecture, React is in View. We&#8217;ll talk more about FLUX architecture in day-4. React is HTML programming, in better term DOM manipulation. Everything in React is component. A components consists one or multiple HTML elements, eventually a group of components makes HTML document, moreover determined UI. An element can attribute(s) and event(s) - look at figure 1.4. In following tutorial, we&#8217;ll be learning about Components, Events, Attributes.</p>
+</div>
 <div class="section" id="component">
-<h2>2. Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h2>
+<h2>3. Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h2>
 <p>Compoment represents a unit UI or set of UIs. In fact, everything is component in React. Let us create our first component, spot name.</p>
 <ol class="arabic">
 <li><p class="first">In your c9 workspace, click on file menu.</p>
@@ -190,8 +199,8 @@ Please login with your c9 account and follow the steps below.</p>
 </div>
 </div>
 <div class="section" id="props">
-<h2>3. Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
-<p>Props is attribute attribute of compoment, mostly useful to pass value to compoment.</p>
+<h2>4. Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
+<p>Props is attribute of compoment, mostly useful to pass value to compoment.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-2
 </pre></div>
 </div>
@@ -211,10 +220,10 @@ Please login with your c9 account and follow the steps below.</p>
 </ol>
 </div>
 <div class="section" id="parent-and-child-components">
-<h2>4. Parent and Child Components<a class="headerlink" href="#parent-and-child-components" title="Permalink to this headline">¶</a></h2>
+<h2>5. Parent and Child Components<a class="headerlink" href="#parent-and-child-components" title="Permalink to this headline">¶</a></h2>
 <p>The power and simplicity of React probably lies on it&#8217;s feature that allow to create reusable compoments. When you make a compoment it can be called from another compoment. The caller is called Parent and the component which is being called is known as Child.</p>
 <div class="section" id="adding-spot-review">
-<h3>4.1 Adding Spot Review<a class="headerlink" href="#adding-spot-review" title="Permalink to this headline">¶</a></h3>
+<h3>5.1 Adding Spot Review<a class="headerlink" href="#adding-spot-review" title="Permalink to this headline">¶</a></h3>
 <p>In our spot app, let us add user review information e.g. good for pullups, bad for running</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-3
 </pre></div>
@@ -275,17 +284,17 @@ Please login with your c9 account and follow the steps below.</p>
 </div></blockquote>
 </div>
 <div class="section" id="more-on-components">
-<h3>4.2. More on Components<a class="headerlink" href="#more-on-components" title="Permalink to this headline">¶</a></h3>
+<h3>5.2. More on Components<a class="headerlink" href="#more-on-components" title="Permalink to this headline">¶</a></h3>
 <p>Let&#8217;s look our Spot layout in DOM heirirachy prospective.</p>
 <ol class="arabic simple">
-<li>First of all we have spot (box) as whole.</li>
-<li>Then we have spot name</li>
-<li>We have list of reiviews. It consist multiple items.</li>
+<li>First of all we have Spot (box) as whole.</li>
+<li>Then we have Spot Name</li>
+<li>We have Spot Review. It consists components i.e. Spot Review Items</li>
 </ol>
 <p>So conceptually, we&#8217;ll have big spot box. Then we divide the box into name and review section. Review section is further dividted into each items.</p>
-<div class="figure" id="id4">
+<div class="figure" id="id5">
 <img alt="_images/react-day-1-components.png" src="_images/react-day-1-components.png" />
-<p class="caption"><span class="caption-text"><em>Figure 1.4: DOM structure</em></span></p>
+<p class="caption"><span class="caption-text"><em>Figure 1.5: DOM structure</em></span></p>
 </div>
 <div class="code bash highlight-python"><div class="highlight"><pre>git checkout -f day-1-step-4
 </pre></div>
@@ -378,7 +387,7 @@ React.render(
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Looking figure 1.4, you can make guess that there should be four component. Exactly, we have four components.</p>
+<p>Compare this code-block, React Component, with with figure 1.5. You must have figured out how each React Components represeted visual block.</p>
 <ol class="arabic simple">
 <li>We have added <code class="code docutils literal"><span class="pre">SpotReviewItem</span></code> component, line 1-7</li>
 <li>We have added <code class="code docutils literal"><span class="pre">Spot</span></code> component, line 28-37</li>
@@ -389,9 +398,8 @@ React.render(
 <div class="section" id="assignments">
 <h2>5. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Add spot description.</li>
+<li>Add spot features</li>
 <li>Add spot address</li>
-<li>Add list of review, show multiple reviews</li>
 <li>Add sharethis component</li>
 </ol>
 </div>
@@ -405,18 +413,19 @@ React.render(
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">DAY-1: React Component</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">DAY-1: React</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#development-environment">1. Development Environment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#c9-dashboard">1.1 c9 dashboard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-workspace">1.2 Create workspace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#workspace-introduction">1.2 Workspace Introduction</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#component">2. Component</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#props">3. Props</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parent-and-child-components">4. Parent and Child Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adding-spot-review">4.1 Adding Spot Review</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#more-on-components">4.2. More on Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#warming-up">2. Warming up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#component">3. Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#props">4. Props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parent-and-child-components">5. Parent and Child Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-spot-review">5.1 Adding Spot Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-on-components">5.2. More on Components</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#assignments">5. Assignments</a></li>

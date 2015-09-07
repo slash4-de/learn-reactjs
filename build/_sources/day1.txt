@@ -1,6 +1,6 @@
-**********************
-DAY-1: React Component
-**********************
+************
+DAY-1: React
+************
 
 This is a fast track JavaScript React Tutorial. We'll be building an outdoor training spot application (a map based database for good outdoor high intensive training spots) - a powerful app using React. React is a JavaScript library developed and maintained by Facebook and being used both in Facebook and Instagram. It is a state of the art technology to develop responsive and rich user interfaces. It can be compared to other Libraries like AngularJS.
 
@@ -78,7 +78,19 @@ In above window, you can see:
 2. **Project exporer**: Shows you a list of files and folders of your project.
 3. **Bash**: Browser based terminal to run Linux commands. In your c9 environment you have your own little Linux server - you can run commands like your were logged in with ssh.
 
-2. Component
+2. Warming up
+#############
+
+React is library for DOM manipulation at abstract level, more like abastract form of jQuery. Combined with FLUX architecture, it replaces traditional MVC architecture. Just to make more clear, React represents V in MVC, if you look i from MVC propestive.
+
+
+.. figure:: images/flux.png
+
+   *Figure 1.4: FLUX architecture*
+
+In this FLUX architecture, React is in View. We'll talk more about FLUX architecture in day-4. React is HTML programming, in better term DOM manipulation. Everything in React is component. A components consists one or multiple HTML elements, eventually a group of components makes HTML document, moreover determined UI. An element can attribute(s) and event(s) - look at figure 1.4. In following tutorial, we'll be learning about Components, Events, Attributes.
+
+3. Component
 ############
 
 Compoment represents a unit UI or set of UIs. In fact, everything is component in React. Let us create our first component, spot name.
@@ -128,10 +140,10 @@ The project URL is shown in line :code:`Your code is running at https://projectn
 
    There are multiple ways to write React compoment - using plain vanilla JavaScript and using JXS. We'll be using JXS all time.
 
-3. Props
+4. Props
 ########
 
-Props is attribute attribute of compoment, mostly useful to pass value to compoment. 
+Props is attribute of compoment, mostly useful to pass value to compoment. 
 
 .. code:: bash
 
@@ -153,12 +165,12 @@ Props is attribute attribute of compoment, mostly useful to pass value to compom
 
    Here, we have passed the spot name using props. Notice that the props can be accessed within component using this.props
 
-4. Parent and Child Components
+5. Parent and Child Components
 ##############################
 
 The power and simplicity of React probably lies on it's feature that allow to create reusable compoments. When you make a compoment it can be called from another compoment. The caller is called Parent and the component which is being called is known as Child.
 
-4.1 Adding Spot Review
+5.1 Adding Spot Review
 ======================
 
 In our spot app, let us add user review information e.g. good for pullups, bad for running
@@ -199,19 +211,19 @@ In our spot app, let us add user review information e.g. good for pullups, bad f
  1. We have added new component i.e. :code:`SpotReview`, line no 1-7
  2. We also made changes on :code:`SpotName` component. Line 12, we added a wrapper division. Line 14, we have called newly created :code:`SpotReview`. Here :code:`SpotName` is parent and :code:`SpotReview` is child.
 
-4.2. More on Components
+5.2. More on Components
 =======================
 Let's look our Spot layout in DOM heirirachy prospective.
 
-1. First of all we have spot (box) as whole.
-2. Then we have spot name
-3. We have list of reiviews. It consist multiple items.
+1. First of all we have Spot (box) as whole.
+2. Then we have Spot Name
+3. We have Spot Review. It consists components i.e. Spot Review Items
 
 So conceptually, we'll have big spot box. Then we divide the box into name and review section. Review section is further dividted into each items.
 
 .. figure:: images/react-day-1-components.png
 
-   *Figure 1.4: DOM structure*
+   *Figure 1.5: DOM structure*
 
 
 .. code:: bash
@@ -266,7 +278,7 @@ So conceptually, we'll have big spot box. Then we divide the box into name and r
       document.getElementById('content')
     );
 
-Looking figure 1.4, you can make guess that there should be four component. Exactly, we have four components.
+Compare this code-block, React Component, with with figure 1.5. You must have figured out how each React Components represeted visual block.
 
 1. We have added :code:`SpotReviewItem` component, line 1-7
 2. We have added :code:`Spot` component, line 28-37
@@ -276,7 +288,6 @@ Looking figure 1.4, you can make guess that there should be four component. Exac
 5. Assignments
 ##############
 
-1. Add spot description.
-2. Add spot address
-3. Add list of review, show multiple reviews
-4. Add sharethis component
+1. Add spot features 
+2. Add spot address 
+3. Add sharethis component 
